@@ -15,5 +15,10 @@
     textmate
     cedet
     ido
-    jump)
+    jump
+    flymake-ruby
+    feature-mode
+    ruby-electric
+    ruby-test-mode
+    rvm)
   "My required packages for launch.")
