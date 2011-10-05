@@ -8,7 +8,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/el-get/ecb")
 (require 'ecb)
-(ecb-activate)
+;(ecb-activate)
 
 ;; some sensible key-strokes
 (global-set-key (kbd "M-1") 'ecb-goto-window-directories)

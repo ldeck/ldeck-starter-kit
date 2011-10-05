@@ -17,7 +17,6 @@
     ido
     jump
     flymake-ruby
-    feature-mode
     ruby-electric
     ruby-test-mode
     rvm)
