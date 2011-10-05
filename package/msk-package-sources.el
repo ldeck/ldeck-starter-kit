@@ -6,18 +6,21 @@
 ;;
 (defconst msk-preferred-packages
   '(starter-kit
-    markdown-mode
-    smex
-    inf-ruby
-    ruby-compilation
     starter-kit-ruby
-    css-mode
-    textmate
+    auto-complete
+    auto-complete-etags
     cedet
-    ido
-    jump
+    css-mode
     flymake-ruby
+    ido
+    inf-ruby
+    jump
+    markdown-mode
+    ruby-compilation
     ruby-electric
     ruby-test-mode
-    rvm)
+    rvm
+    smex
+    textmate
+    )
   "My required packages for launch.")

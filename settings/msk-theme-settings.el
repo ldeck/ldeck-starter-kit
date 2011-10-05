@@ -5,8 +5,6 @@
 ;(add-to-list 'load-path "~/.emacs.d/elpa/color-theme-railscasts-0.0.2")
 
 (require 'color-theme)
-;(color-theme-initialize)
-
 ;(require 'color-theme-railscasts)
 
 (defun code-focus-light ()
