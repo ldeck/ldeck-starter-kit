@@ -13,7 +13,14 @@
         (:name feature-mode
                :type git
                :url "git://github.com/michaelklishin/cucumber.el.git"
-               :load "feature-mode.el")))
+               :load "feature-mode.el")
+        (:name zenburn
+               :type git
+               :url "git://github.com/dbrock/zenburn-el.git"
+               :load "zenburn.el"
+               :after (lambda ()
+                        (zenburn)))
+        ))
 
 (setq msk-el-get-packages
       (append
