@@ -7,13 +7,8 @@
               :type git
               :url "git://github.com/emacsmirror/ecb.git"
               :load "ecb.el")
-        (:name rinari
-               :type git
-               :url "git://github.com/eschulte/rinari.git")
-        (:name feature-mode
-               :type git
-               :url "git://github.com/michaelklishin/cucumber.el.git"
-               :load "feature-mode.el")
+        (:name rinari)
+        (:name feature-mode)
         (:name zenburn
                :type git
                :url "git://github.com/dbrock/zenburn-el.git"
