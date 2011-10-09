@@ -1,7 +1,8 @@
 (provide 'msk-editor-settings)
 
 ;; autosaves and backups
-(setq auto-save-file-name-transforms `(("." . ,(expand-file-name "~/.emacs.d/autosave")))
+(make-directory "~/.emacs.d/autosave" t)
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/autosave/\\1" t)))
 (setq tramp-auto-save-directory "~/.emacs.d/tramp-autosave")
 
 ;; whitespace settings
