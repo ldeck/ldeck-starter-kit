@@ -8,7 +8,13 @@
               :url "git://github.com/emacsmirror/ecb.git"
               :load "ecb.el")
         (:name rinari)
-        (:name feature-mode)
+        (:name feature-mode
+               :description "Major mode for Cucumber feature files (copy of recipe from el-get)"
+               :type git
+               :url "git://github.com/michaelklishin/cucumber.el.git"
+               :features feature-mode
+               :post-init (lambda ()
+                    (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))))
         (:name zenburn
                :type git
                :url "git://github.com/dbrock/zenburn-el.git"
