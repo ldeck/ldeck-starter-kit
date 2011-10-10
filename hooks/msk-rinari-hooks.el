@@ -1,2 +1,0 @@
-(provide 'msk-rinari-hooks)
-
