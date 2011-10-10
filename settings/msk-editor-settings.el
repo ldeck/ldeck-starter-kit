@@ -71,3 +71,44 @@
 ;(highlight-current-line-set-bg-color "#E5F5B3")
 
 
+;; kill ring customisations:
+;; ------------------------
+;; not currently a fan of having everything bar the kitchen sink going
+;; onto the kill ring. For now reserve this for specific kills which
+;; should make it much simpler to find the block to select in the kill
+;; ring that you want to yank.
+
+(defun msk-delete-word-forward (&optional count)
+  "Delete characters forward until the end of word, optionally COUNT times.
+This function will not push the deleted text onto the kill ring"
+  (interactive)
+  (delete-region (point) (progn (forward-word count) (point))))
+
+(defun msk-delete-word-backward (&optional count)
+  "Delete characters backward until the start of the word, optionally COUNT times.
+This function will not push the deleted text onto the kill ring"
+  (interactive)
+  (let ((n (or count 1)))
+    (msk-delete-word-forward (- n))))
+
+(defun msk-delete-line-forward ()
+  "Delete the remainder of the line without pushing to the kill ring"
+  (interactive)
+  (delete-region
+   (point)
+   (save-excursion (move-end-of-line 1) (point)))
+)
+
+(defun msk-delete-line-backward ()
+  "Delete text between the beginning of the line and the point
+ without pushing to the kill ring"
+  (interactive)
+  (delete-region
+   (save-excursion (move-beginning-of-line 1) (point))
+   (point))
+)
+
+(global-set-key (kbd "M-d") 'msk-delete-word-forward)
+(global-set-key (kbd "M-DEL") 'msk-delete-word-backward)
+(global-set-key (kbd "C-k") 'msk-delete-line-forward)
+(global-set-key (kbd "C-c C-k") 'msk-delete-line-backward)
