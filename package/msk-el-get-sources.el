@@ -34,31 +34,90 @@
 
 (provide 'msk-el-get-sources)
 
-;; define additional packages sources to install via el-get
+;; define custom recipes
 (setq el-get-sources
-      '((:name ecb
+      '((:name auto-complete)
+        (:name auto-complete-css)
+        (:name auto-complete-emacs-lisp)
+        (:name auto-complete-etags)
+        (:name auto-complete-ruby)
+        (:name css-mode)
+        (:name color-theme-zenburn
+               :depends color-theme
+	       :after (lambda ()
+			(progn
+			  (require 'zenburn)
+			  (zenburn))))
+        (:name ecb
               :type git
               :url "git://github.com/emacsmirror/ecb.git"
               :load "ecb.el")
-        (:name rinari)
-        (:name feature-mode
-               :description "Major mode for Cucumber feature files (copy of recipe from el-get)"
+        (:name elisp-slime-nav
+               :type elpa)
+        (:name el-get
+               :branch "master")
+        (:name feature-mode)
+	(:name flymake-ruby)
+        (:name jump
+               :type elpa)
+	(:name markdown-mode)
+	(:name smex)
+        (:name starter-kit
                :type git
-               :url "git://github.com/michaelklishin/cucumber.el.git"
-               :features feature-mode
-               :post-init (lambda ()
-                    (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))))
-        (:name zenburn
-               :type git
-               :url "git://github.com/dbrock/zenburn-el.git"
-               :load "zenburn.el"
+               :branch "master"
+               :url "git://github.com/technomancy/emacs-starter-kit.git"
+               :depends (elisp-slime-nav
+                          inf-ruby)
                :after (lambda ()
-                        (zenburn)))
-        ))
+                        (progn
+			  (require 'paredit)
+                          (require 'starter-kit-bindings)
+                          (require 'starter-kit-eshell)
+			  (require 'starter-kit-lisp))))
+))
 
-(setq msk-el-get-packages
+(setq msk-el-get-packages 
       (append
-       '(el-get rinari ecb feature-mode)
-       (mapcar 'el-get-source-name el-get-sources)))
+       '(paredit)
+       (mapcar 'el-get-source-name el-get-sources)
+       )
+)
 
-
+;; (setq msk-el-get-packages
+;;       (append
+;;        '(ahg
+;;          anything
+;;          auto-complete
+;;          auto-complete-css
+;;          auto-complete-emacs-lisp
+;;          auto-complete-etags
+;;          auto-complete-ruby
+;;          auto-complete-yasnippet
+;;          color-theme
+;;          color-theme-zenburn
+;;          css-mode
+;;          ecb
+;;          elisp-slime-nav
+;;          el-get
+;;          feature-mode
+;;          flymake-point
+;;          flymake-ruby
+;;          inf-ruby
+;;          jump
+;;          markdown-mode
+;;          nav
+;;          nxhtml
+;;          rdebug
+;;          rhtml-mode
+;;          rinari
+;;          rspec-mode
+;;          ruby-compilation
+;;          ruby-electric
+;;          ruby-test-mode
+;;          rvm
+;;          smex
+;;          starter-kit
+;;          yaml-mode
+;;          yari
+;;          yasnippet)
+;;         (mapcar 'el-get-source-name el-get-sources)))
