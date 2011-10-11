@@ -34,6 +34,9 @@
 
 (provide 'msk-init-begin)
 
+;; enforce master branch for el-get
+(setq el-get-master-branch "master")
+
 ;;
 ;; custom init cleanup goes here
 ;;
