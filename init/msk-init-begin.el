@@ -38,5 +38,13 @@
 (setq el-get-master-branch "master")
 
 ;;
-;; custom init cleanup goes here
+;; defining missing code hooks for used packages
+;; that fail to load/compile without them
 ;;
+(defun run-coding-hook ()
+  "do nothing"
+  )
+
+(defun turn-on-paredit ()
+    (paredit-mode +1))
+
