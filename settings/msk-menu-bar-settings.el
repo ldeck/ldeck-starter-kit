@@ -37,3 +37,6 @@
     (menu-bar-mode t))
 (if (not window-system)
     (menu-bar-mode -1))
+
+(require 'recentf)
+(recentf-mode 1)
