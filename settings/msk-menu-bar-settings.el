@@ -35,3 +35,5 @@
 
 (if window-system
     (menu-bar-mode t))
+(if (not window-system)
+    (menu-bar-mode -1))
