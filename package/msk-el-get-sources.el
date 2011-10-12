@@ -36,7 +36,8 @@
 
 ;; define custom recipes
 (setq el-get-sources
-      '((:name auto-complete)
+      '((:name anything)
+        (:name auto-complete)
         (:name auto-complete-css)
         (:name auto-complete-emacs-lisp)
         (:name auto-complete-etags)
@@ -60,6 +61,7 @@
         (:name feature-mode)
 	(:name findr
 	       :type elpa)
+        (:name flymake-point)
         (:name flymake-ruby)
         (:name ido-ubiquitous
                :type elpa)
@@ -73,12 +75,12 @@
                :type elpa
 	       :depends (findr inflections))
         (:name markdown-mode)
+        (:name nav)
+        (:name rinari)
         (:name smex)
         (:name starter-kit
                :type git
                :branch "v2"
-               :before (lambda ()
-                         (add-to-list 'load-path "~/.emacs.d/el-get/starter-kit"))
                :url "git://github.com/ldeck/emacs-starter-kit.git"
                :depends (elisp-slime-nav
 			 find-file-in-project
@@ -101,26 +103,6 @@
 ;; (setq msk-el-get-packages
 ;;       (append
 ;;        '(ahg
-;;          anything
-;;          auto-complete
-;;          auto-complete-css
-;;          auto-complete-emacs-lisp
-;;          auto-complete-etags
-;;          auto-complete-ruby
-;;          auto-complete-yasnippet
-;;          color-theme
-;;          color-theme-zenburn
-;;          css-mode
-;;          ecb
-;;          elisp-slime-nav
-;;          el-get
-;;          feature-mode
-;;          flymake-point
-;;          flymake-ruby
-;;          inf-ruby
-;;          jump
-;;          markdown-mode
-;;          nav
 ;;          nxhtml
 ;;          rdebug
 ;;          rhtml-mode
@@ -130,8 +112,6 @@
 ;;          ruby-electric
 ;;          ruby-test-mode
 ;;          rvm
-;;          smex
-;;          starter-kit
 ;;          yaml-mode
 ;;          yari
 ;;          yasnippet)
