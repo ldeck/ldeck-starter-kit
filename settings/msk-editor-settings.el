@@ -112,3 +112,33 @@ This function will not push the deleted text onto the kill ring"
 (global-set-key (kbd "M-DEL") 'msk-delete-word-backward)
 (global-set-key (kbd "C-k") 'msk-delete-line-forward)
 (global-set-key (kbd "C-c C-k") 'msk-delete-line-backward)
+
+;; Clipboard interaction
+;; ---------------------
+;; use pbpaste | pbcopy on darwin
+
+(defun pbboard-paste ()
+  (shell-command-to-string "pbpaste"))
+
+(defun pbboard-copy (text &optional push)
+  (let ((process-connection-type nil)) 
+      (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+        (process-send-string proc text)
+        (process-send-eof proc))))
+
+(defun ns-cut-pasteboard (p1 p2)
+  (interactive "r*")
+  (ns-set-pasteboard
+   (filter-buffer-substring p1 p2 t)))
+
+(if (eq system-type 'darwin)
+    (if window-system
+        (progn
+          (setq interprogram-cut-function 'ns-cut-pasteboard)
+          (setq interprogram-paste-function 'ns-get-pasteboard))
+      (progn
+        (setq interprogram-cut-function 'pbboard-copy)
+        (setq interprogram-paste-function 'pbboard-paste))
+     ())
+    (setq interprogram-cut-function 'paste-to-osx))
+
