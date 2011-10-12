@@ -41,47 +41,62 @@
         (:name auto-complete-emacs-lisp)
         (:name auto-complete-etags)
         (:name auto-complete-ruby)
+        (:name auto-complete-yasnippet)
         (:name css-mode)
         (:name color-theme-zenburn
                :depends color-theme
-	       :after (lambda ()
-			(progn
-			  (require 'zenburn)
-			  (zenburn))))
+               :after (lambda ()
+                        (progn
+                          (require 'zenburn)
+                          (zenburn))))
         (:name ecb
-              :type git
-              :url "git://github.com/emacsmirror/ecb.git"
-              :load "ecb.el")
+               :type git
+               :url "git://github.com/emacsmirror/ecb.git"
+               :load "ecb.el")
         (:name elisp-slime-nav
                :type elpa)
         (:name el-get
                :branch "master")
         (:name feature-mode)
-	(:name flymake-ruby)
-        (:name jump
+	(:name findr
+	       :type elpa)
+        (:name flymake-ruby)
+        (:name ido-ubiquitous
                :type elpa)
-	(:name markdown-mode)
-	(:name smex)
+        (:name idle-highlight-mode
+               :type elpa
+               :load "idle-highlight-mode.el")
+        (:name inf-ruby)
+	(:name inflections
+	       :type elpa)
+        (:name jump
+               :type elpa
+	       :depends (findr inflections))
+        (:name markdown-mode)
+        (:name smex)
         (:name starter-kit
                :type git
-               :branch "master"
-               :url "git://github.com/technomancy/emacs-starter-kit.git"
+               :branch "v2"
+               :before (lambda ()
+                         (add-to-list 'load-path "~/.emacs.d/el-get/starter-kit"))
+               :url "git://github.com/ldeck/emacs-starter-kit.git"
                :depends (elisp-slime-nav
-                          inf-ruby)
-               :after (lambda ()
-                        (progn
-			  (require 'paredit)
-                          (require 'starter-kit-bindings)
-                          (require 'starter-kit-eshell)
-			  (require 'starter-kit-lisp))))
-))
+			 find-file-in-project
+			 idle-highlight-mode
+			 ido-ubiquitous
+			 inf-ruby
+			 magit
+			 paredit
+			 smex)
+               :load-path ("." "modules"))
+        ))
 
 (setq msk-el-get-packages 
       (append
-       '(paredit)
+       '()
        (mapcar 'el-get-source-name el-get-sources)
        )
-)
+      )
 
 ;; (setq msk-el-get-packages
 ;;       (append

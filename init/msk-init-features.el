@@ -39,3 +39,29 @@
 ;; custom features init goes here (e.g., in specific order)
 ;; e.g., (require 'foo)
 ;;
+
+(dolist (d '("elisp-slime-nav"
+             "find-file-in-project"
+             "idle-highlight-mode"
+             "ido-ubiquitous"
+             "inf-ruby"
+             "magit"
+             "paredit"
+             "smex"))
+  (progn
+    (add-to-list 'load-path  (concat "~/.emacs.d/el-get/" d))
+    (require (intern d))
+  ))
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/starter-kit"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/starter-kit/modules"))
+
+(dolist (d '(starter-kit-defuns
+             starter-kit-misc
+             starter-kit-bindings
+             starter-kit-eshell
+             starter-kit-js
+             starter-kit-lisp
+             starter-kit-ruby))
+  (require d))
+
