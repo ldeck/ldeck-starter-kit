@@ -37,14 +37,3 @@
 ;; enforce master branch for el-get
 (setq el-get-master-branch "master")
 
-;;
-;; defining missing code hooks for used packages
-;; that fail to load/compile without them
-;;
-(defun run-coding-hook ()
-  "do nothing"
-  )
-
-(defun turn-on-paredit ()
-    (paredit-mode +1))
-
