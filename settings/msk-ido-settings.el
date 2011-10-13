@@ -38,3 +38,5 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
+(require 'ido-ubiquitous)
+(ido-ubiquitous-disable-in tmm-menubar)
