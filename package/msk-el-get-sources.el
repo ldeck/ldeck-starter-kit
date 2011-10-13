@@ -34,6 +34,20 @@
 
 (provide 'msk-el-get-sources)
 
+;; todos
+;; -----
+;; fix jump / inflections: use when-compile
+;; fix starter-kit autoloads: fix el-get load-path
+;; upgrading ruby-compilation: fix depend conflict inf-ruby version
+
+;; source wishes
+;; ------
+;; ensime
+;; jdee
+;; rdebug / ruby-debug?
+;; ruby-compilation
+
+
 ;; define custom recipes
 (setq el-get-sources
       '((:name ahg)
@@ -111,9 +125,5 @@
        (mapcar 'el-get-source-name el-get-sources)
        )
       )
-
-
-;; rdebug
-;; ruby-compilation
 
 
