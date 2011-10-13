@@ -36,7 +36,8 @@
 
 ;; define custom recipes
 (setq el-get-sources
-      '((:name anything)
+      '((:name ahg)
+        (:name anything)
         (:name auto-complete)
         (:name auto-complete-css)
         (:name auto-complete-emacs-lisp)
@@ -64,7 +65,8 @@
         (:name flymake-point)
         (:name flymake-ruby)
         (:name ido-ubiquitous
-               :type elpa)
+               :type git
+               :url "git://github.com/technomancy/ido-ubiquitous.git")
         (:name idle-highlight-mode
                :type elpa
                :load "idle-highlight-mode.el")
@@ -76,7 +78,14 @@
 	       :depends (findr inflections))
         (:name markdown-mode)
         (:name nav)
+        (:name nxhtml)
+        (:name rhtml-mode)
         (:name rinari)
+        (:name rspec-mode)
+        (:name ruby-electric)
+        (:name ruby-test-mode)
+        (:name ruby-mode)
+        (:name rvm)
         (:name smex)
         (:name starter-kit
                :type git
@@ -91,6 +100,9 @@
 			 paredit
 			 smex)
                :load-path ("." "modules"))
+        (:name yaml-mode)
+        (:name yari)
+        (:name yasnippet)
         ))
 
 (setq msk-el-get-packages 
@@ -100,19 +112,8 @@
        )
       )
 
-;; (setq msk-el-get-packages
-;;       (append
-;;        '(ahg
-;;          nxhtml
-;;          rdebug
-;;          rhtml-mode
-;;          rinari
-;;          rspec-mode
-;;          ruby-compilation
-;;          ruby-electric
-;;          ruby-test-mode
-;;          rvm
-;;          yaml-mode
-;;          yari
-;;          yasnippet)
-;;         (mapcar 'el-get-source-name el-get-sources)))
+
+;; rdebug
+;; ruby-compilation
+
+
