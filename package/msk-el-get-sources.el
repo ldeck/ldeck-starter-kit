@@ -45,8 +45,6 @@
 ;; ensime
 ;; jdee
 ;; rdebug / ruby-debug?
-;; ruby-compilation
-
 
 ;; define custom recipes
 (setq el-get-sources
@@ -74,8 +72,6 @@
         (:name el-get
                :branch "master")
         (:name feature-mode)
-	(:name findr
-	       :type elpa)
         (:name flymake-point)
         (:name flymake-ruby)
         (:name ido-ubiquitous
@@ -84,12 +80,6 @@
         (:name idle-highlight-mode
                :type elpa
                :load "idle-highlight-mode.el")
-        (:name inf-ruby)
-	(:name inflections
-	       :type elpa)
-        (:name jump
-               :type elpa
-	       :depends (findr inflections))
         (:name markdown-mode)
         (:name nav)
         (:name nxhtml)
