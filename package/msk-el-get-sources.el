@@ -42,7 +42,6 @@
 
 ;; source wishes
 ;; ------
-;; ensime
 ;; jdee
 ;; rdebug / ruby-debug?
 
@@ -71,6 +70,8 @@
                :type elpa)
         (:name el-get
                :branch "master")
+        (:name ensime
+	       :depends scala-mode)
         (:name feature-mode)
         (:name flymake-point)
         (:name flymake-ruby)
@@ -90,6 +91,7 @@
         (:name ruby-test-mode)
         (:name ruby-mode)
         (:name rvm)
+        (:name scala-mode)
         (:name smex)
         (:name starter-kit
                :type git
