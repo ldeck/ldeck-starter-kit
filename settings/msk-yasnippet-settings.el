@@ -6,4 +6,4 @@
 	    (append
 	     (list (concat msk-user-dir "snippets"))
              yas/snippet-dirs))
-      (yas/reload-all)
+      (yas/reload-all)))
