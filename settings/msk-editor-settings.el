@@ -142,3 +142,66 @@ This function will not push the deleted text onto the kill ring"
      ())
     (setq interprogram-cut-function 'paste-to-osx))
 
+;;
+;; functions to reformat files
+;;
+(defun buffer-untabify ()
+  "Convert tabs to spaces for the buffer"
+  (interactive)
+  (untabify (point-min) (point-max)))
+
+(defun buffer-indent ()
+  "Reindent entire buffer"
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun reformat-buffer ()
+  (interactive)
+  (buffer-untabify)
+  (buffer-indent)
+  (delete-trailing-whitespace))
+
+(defun reformat-file (file)
+  (progn
+    (let ((buffer-exists (file-already-in-buffer-p file)))
+      (switch-to-buffer (find-file-noselect file) t)
+      (reformat-buffer)
+      (save-buffer)
+      (unless buffer-exists
+        (kill-buffer)))))
+
+(defvar msk-reformat-files-history nil)
+
+(defun buffer-file-names-list ()
+  (let (ls)
+    (progn
+      (dolist (b (buffer-list))
+        (let ((file (buffer-file-name b)))
+          (if file
+              (setq ls (cons file ls)))))
+      ls)))
+
+(defun file-already-in-buffer-p (file)
+  (member (format "%s" file) (buffer-file-names-list)))
+
+(defun msk-recurse-reformat (dir str)
+  (dolist (f (directory-files dir))
+    (if (not (string-match "^\\." f))
+        (let* ((fullpath (concat (file-name-as-directory dir) f))
+               (buffer-already-open (file-already-in-buffer-p fullpath)))
+          (if (file-directory-p fullpath)
+              (msk-recurse-reformat fullpath str)
+            (if (and (string-match str f))
+                (reformat-file fullpath)))))))
+
+(defun reformat-files-regexp (str)
+  (interactive
+   (let* ((default (car my-func-history))
+          (default-preview (or (and default (format " [%s]" default))
+                               ""))
+          (prompt-string (format "Reformat files matching regexp%s: " default-preview))
+          (reg (read-string prompt-string nil 'msk-reformat-files-history default))
+          (dir (ido-read-file-name
+                (format "Reformat files matching regexp: %s in:" reg)
+                default-directory nil t nil 'file-directory-p)))
+     (list (msk-recurse-reformat dir reg)))))
