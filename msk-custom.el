@@ -47,7 +47,8 @@
                                             "^\\.\\(DS_Store\\|Trash\\)$")))
  '(ecb-layout-window-sizes (quote (("left8" (ecb-directories-buffer-name 0.25 . 0.28) (ecb-sources-buffer-name 0.25 . 0.23) (ecb-methods-buffer-name 0.25 . 0.28) (ecb-history-buffer-name 0.25 . 0.17)))))
  '(ecb-options-version "2.40")
- '(ecb-tip-of-the-day nil))
+ '(ecb-tip-of-the-day nil)
+ '(mumamo-chunk-coloring 1))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -55,4 +56,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ecb-default-highlight-face ((t (:background "color-238" :foreground "color-106" :weight bold))))
- '(ecb-tree-guide-line-face ((t (:inherit ecb-default-general-face :foreground "color-240" :height 1.0)))))
+ '(ecb-tree-guide-line-face ((t (:inherit ecb-default-general-face :foreground "color-240" :height 1.0))))
+ '(mumamo-background-chunk-major ((t (:background "color-241"))))
+ '(mumamo-background-chunk-submode1 ((t (:background "color-239"))))
+ '(mumamo-background-chunk-submode2 ((t (:background "color-237"))))
+ '(mumamo-background-chunk-submode3 ((t (:background "color-235"))))
+ '(mumamo-background-chunk-submode4 ((t (:background "color-233")))))
