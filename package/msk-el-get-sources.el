@@ -84,7 +84,6 @@
         (:name markdown-mode)
         (:name nav)
         (:name nxhtml)
-        (:name rhtml-mode)
         (:name rinari)
         (:name rspec-mode)
         (:name ruby-electric)
