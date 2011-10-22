@@ -19,6 +19,7 @@
               (setq yas/mode-symbol 'rails-mode)))
 
 ;; try expanding yasnippet first on TAB
+;; http://code.google.com/p/yasnippet/issues/detail?id=71
 (defun yas/advise-indent-function (function-symbol)
   (eval `(defadvice ,function-symbol (around yas/try-expand-first activate)
            ,(format
