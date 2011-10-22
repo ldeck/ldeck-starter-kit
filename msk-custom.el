@@ -57,6 +57,7 @@
  ;; If there is more than one, they won't work right.
  '(ecb-default-highlight-face ((t (:background "color-238" :foreground "color-106" :weight bold))))
  '(ecb-tree-guide-line-face ((t (:inherit ecb-default-general-face :foreground "color-240" :height 1.0))))
+ '(flymake-warnline ((t (:background "color-103"))))
  '(mumamo-background-chunk-major ((t (:background "color-241"))))
  '(mumamo-background-chunk-submode1 ((t (:background "color-239"))))
  '(mumamo-background-chunk-submode2 ((t (:background "color-237"))))
