@@ -8,3 +8,5 @@
  nxml-degraded t)
 
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-nxhtml-mumamo-mode))
+
+(add-to-list 'auto-mode-alist '("\\.html" . nxhtml-mode))
