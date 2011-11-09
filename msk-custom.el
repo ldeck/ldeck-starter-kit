@@ -41,7 +41,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ecb-auto-activate t)
- '(ecb-excluded-directories-regexps (quote ("^\\(CVS\\|TAGS\\)$"
+ '(ecb-excluded-directories-regexps (quote ("^\\.DocumentRevisions-V100$"
+                                            "^\\.Trashes$"
+                                            "^\\(CVS\\|TAGS\\)$"
                                             "^\\.\\(git\\|hg\\|svn\\)$"
                                             "^\\.\\{1,2\\}$"
                                             "^\\.\\(DS_Store\\|Trash\\)$")))
