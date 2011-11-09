@@ -41,7 +41,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ecb-auto-activate t)
- '(ecb-excluded-directories-regexps (quote ("^\\.DocumentRevisions-V100$"
+ '(ecb-excluded-directories-regexps (quote ("^\\.\\(DocumentRevisions\\|Spotlight\\)-V100$"
                                             "^\\.Trashes$"
                                             "^\\(CVS\\|TAGS\\)$"
                                             "^\\.\\(git\\|hg\\|svn\\)$"
@@ -91,7 +91,11 @@
                        (t "/" ecb-toggle-compile-window-height)
                        (t "," ecb-cycle-maximized-ecb-buffers)
                        (t "." ecb-cycle-through-compilation-buffers))))
- '(ecb-layout-window-sizes (quote (("left8" (ecb-directories-buffer-name 0.25 . 0.28) (ecb-sources-buffer-name 0.25 . 0.23) (ecb-methods-buffer-name 0.25 . 0.28) (ecb-history-buffer-name 0.25 . 0.17)))))
+ '(ecb-layout-window-sizes (quote (("left8"
+                                    (ecb-directories-buffer-name 0.25 . 0.28)
+                                    (ecb-sources-buffer-name 0.25 . 0.23)
+                                    (ecb-methods-buffer-name 0.25 . 0.28)
+                                    (ecb-history-buffer-name 0.25 . 0.17)))))
  '(ecb-options-version "2.40")
  '(ecb-tip-of-the-day nil)
  '(mumamo-chunk-coloring 1))
