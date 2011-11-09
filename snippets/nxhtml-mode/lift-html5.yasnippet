@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: lift-html5
+# key: lift-html5
+# --
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>${1:Hello World!}</title>
+</head>
+<body class="lift:content_id=main">
+  <div id="main" class="lift:surround?with=default;at=content">
+    ${0}Static content... everything you put in the /static
+    directory will be served without additions to SiteMap
+  </div>
+</body>
+</html>
