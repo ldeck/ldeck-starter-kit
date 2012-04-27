@@ -110,8 +110,8 @@ This function will not push the deleted text onto the kill ring"
 
 (global-set-key (kbd "M-d") 'msk-delete-word-forward)
 (global-set-key (kbd "M-DEL") 'msk-delete-word-backward)
-(global-set-key (kbd "C-k") 'msk-delete-line-forward)
-(global-set-key (kbd "C-c C-k") 'msk-delete-line-backward)
+(global-set-key (kbd "C-M-k") 'msk-delete-line-forward)
+(global-set-key (kbd "C-c C-M-k") 'msk-delete-line-backward)
 
 ;; Clipboard interaction
 ;; ---------------------

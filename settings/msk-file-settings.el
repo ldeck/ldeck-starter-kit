@@ -1,4 +1,4 @@
-;;; msk-package-sources.el ---preferred packages via ELPA.
+;;; msk-file-settings.el --- as the name implies
 ;;
 ;; Copyright (c) 2011 Lachlan Deck and contributors
 ;;
@@ -11,7 +11,7 @@
 
 ;;; Commentary:
 
-;; My preferred packages from ELPA.
+;; File type settings
 
 ;;; License:
 
@@ -31,13 +31,9 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+(provide 'msk-file-settings)
 
-(provide 'msk-package-sources)
-
-(print "loaded msk-package-sources.el")
-
-;; line separated
-;;
-(defconst msk-preferred-packages
-  '()
-  "My required packages for launch.")
+(eval-after-load 'find-file-in-project
+  '(progn
+     (add-to-list 'ffip-patterns "*.scala")
+     (add-to-list 'ffip-patterns "*.props")))
