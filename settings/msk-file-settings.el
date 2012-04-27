@@ -36,4 +36,6 @@
 (eval-after-load 'find-file-in-project
   '(progn
      (add-to-list 'ffip-patterns "*.scala")
-     (add-to-list 'ffip-patterns "*.props")))
+     (add-to-list 'ffip-patterns "*.props")
+	 (add-to-list 'ffip-patterns "*.properties")
+	 (add-to-list 'ffip-patterns "*.xml")))
