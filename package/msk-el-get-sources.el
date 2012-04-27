@@ -45,6 +45,19 @@
 ;; jdee
 ;; rdebug / ruby-debug?
 
+
+;; sources disabled
+;; cedet/ecb was working with emacs24,
+;; but emacs24 has some different behaviour which effects ensime
+;; ------
+(setq el-get-sources-disabled
+  '((:name cedet)
+    (:name ecb
+         :type git
+         :url "git://github.com/emacsmirror/ecb.git"
+         :load "ecb.el"))
+  )
+
 ;; define custom recipes
 (setq el-get-sources
       '((:name ahg)
@@ -62,10 +75,6 @@
                         (progn
                           (require 'zenburn)
                           (zenburn))))
-        (:name ecb
-               :type git
-               :url "git://github.com/emacsmirror/ecb.git"
-               :load "ecb.el")
         (:name elisp-slime-nav
                :type elpa)
         (:name el-get
