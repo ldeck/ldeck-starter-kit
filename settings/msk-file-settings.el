@@ -37,5 +37,9 @@
   '(progn
      (add-to-list 'ffip-patterns "*.scala")
      (add-to-list 'ffip-patterns "*.props")
-	 (add-to-list 'ffip-patterns "*.properties")
-	 (add-to-list 'ffip-patterns "*.xml")))
+     (add-to-list 'ffip-patterns "*.properties")
+     (add-to-list 'ffip-patterns "*.xml")))
+
+(add-to-list 'auto-mode-alist '("\\.props$" . conf-javaprop-mode))
+;; (add-hook 'conf-javaprop-mode-hook
+;;           '(lambda () (conf-quote-normal nil)))
